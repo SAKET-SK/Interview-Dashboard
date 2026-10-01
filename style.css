@@ -1,0 +1,915 @@
+/* ==========================================
+   Saket — Interview Journey
+   ========================================== */
+
+
+   :root {
+
+    box-sizing: border-box;
+
+    --bg: #0b0d10;
+    --card: #111419;
+    --line: #252a31;
+
+    --tx: #eef1f4;
+    --mu: #89929e;
+
+    --ac: #65d5c2;
+    --bl: #7aa7ff;
+    --gr: #9fe870;
+    --rd: #ff6673;
+
+}
+
+
+@media (prefers-color-scheme: light) {
+
+    :root:not([data-theme="dark"]) {
+
+        --bg: #f4f6f8;
+        --card: #ffffff;
+        --line: #dbe1e7;
+
+        --tx: #10151b;
+        --mu: #5c6675;
+
+        --ac: #0c9b8a;
+        --bl: #2f66d6;
+        --gr: #3d8a1f;
+        --rd: #c93548;
+
+    }
+
+}
+
+
+:root[data-theme="light"] {
+
+    --bg: #f4f6f8;
+    --card: #ffffff;
+    --line: #dbe1e7;
+
+    --tx: #10151b;
+    --mu: #5c6675;
+
+    --ac: #0c9b8a;
+    --bl: #2f66d6;
+    --gr: #3d8a1f;
+    --rd: #c93548;
+
+}
+
+
+html {
+
+    scroll-padding-top:
+        env(
+            safe-area-inset-top,
+            0px
+        );
+
+}
+
+
+* {
+
+    box-sizing: border-box;
+
+}
+
+
+body {
+
+    margin: 0;
+
+    background:
+        var(--bg);
+
+    color:
+        var(--tx);
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+}
+
+
+/* ==========================================
+   PAGE
+   ========================================== */
+
+.page {
+
+    max-width: 1200px;
+
+    margin:
+        auto;
+
+    padding:
+        40px 28px 60px;
+
+}
+
+
+/* ==========================================
+   TYPOGRAPHY
+   ========================================== */
+
+.ey {
+
+    font:
+        600 11px
+        ui-monospace,
+        Menlo,
+        monospace;
+
+    letter-spacing:
+        .14em;
+
+    color:
+        var(--mu);
+
+    text-transform:
+        uppercase;
+
+}
+
+
+h1 {
+
+    font-size:
+        clamp(
+            30px,
+            6vw,
+            52px
+        );
+
+    line-height:
+        1;
+
+    letter-spacing:
+        -.03em;
+
+    margin:
+        14px 0;
+
+}
+
+
+h1 b {
+
+    color:
+        var(--ac);
+
+}
+
+
+h2 {
+
+    font-size:
+        16px;
+
+    margin:
+        4px 0 0;
+
+}
+
+
+p.intro {
+
+    max-width:
+        720px;
+
+    color:
+        var(--mu);
+
+    line-height:
+        1.6;
+
+    font-size:
+        14px;
+
+}
+
+
+/* ==========================================
+   STATISTICS
+   ========================================== */
+
+.stats {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    gap:
+        10px;
+
+    margin:
+        18px 0;
+
+}
+
+
+.st {
+
+    border:
+        1px solid
+        var(--line);
+
+    background:
+        var(--card);
+
+    border-radius:
+        14px;
+
+    padding:
+        16px;
+
+    min-height:
+        96px;
+
+}
+
+
+.st b {
+
+    display:
+        block;
+
+    font-size:
+        28px;
+
+    letter-spacing:
+        -.02em;
+
+}
+
+
+.st span {
+
+    display:
+        block;
+
+    color:
+        var(--mu);
+
+    font-size:
+        11.5px;
+
+    margin-top:
+        6px;
+
+    line-height:
+        1.35;
+
+}
+
+
+.st.a b {
+
+    color:
+        var(--ac);
+
+}
+
+
+.st.r b {
+
+    color:
+        var(--rd);
+
+}
+
+
+.st.g b {
+
+    color:
+        var(--gr);
+
+}
+
+
+/* ==========================================
+   CARDS
+   ========================================== */
+
+.card {
+
+    border:
+        1px solid
+        var(--line);
+
+    background:
+        var(--card);
+
+    border-radius:
+        16px;
+
+    padding:
+        18px;
+
+    margin:
+        14px 0;
+
+}
+
+
+.sh {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    gap:
+        12px;
+
+    align-items:
+        flex-end;
+
+    margin-bottom:
+        14px;
+
+    flex-wrap:
+        wrap;
+
+}
+
+
+.small {
+
+    font-size:
+        11.5px;
+
+    color:
+        var(--mu);
+
+}
+
+
+/* ==========================================
+   TIMELINE
+   ========================================== */
+
+.tlwrap {
+
+    overflow-x:
+        auto;
+
+    padding-bottom:
+        4px;
+
+}
+
+
+.tline {
+
+    position:
+        relative;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    min-width:
+        900px;
+
+    height:
+        168px;
+
+}
+
+
+.baseline {
+
+    position:
+        absolute;
+
+    left:
+        4px;
+
+    right:
+        4px;
+
+    top:
+        50%;
+
+    height:
+        1px;
+
+    background:
+        var(--line);
+
+}
+
+
+.tnode {
+
+    position:
+        relative;
+
+    flex:
+        1;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+}
+
+
+.tdot {
+
+    width:
+        11px;
+
+    height:
+        11px;
+
+    border-radius:
+        50%;
+
+    z-index:
+        2;
+
+    border:
+        2px solid
+        var(--card);
+
+}
+
+
+.tnode.final .tdot {
+
+    box-shadow:
+        0 0 0 3px
+        var(--rd);
+
+}
+
+
+.tlabel {
+
+    position:
+        absolute;
+
+    width:
+        124px;
+
+    text-align:
+        center;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.35;
+
+}
+
+
+.tlabel .co2 {
+
+    color:
+        var(--tx);
+
+    font-weight:
+        650;
+
+    font-size:
+        12px;
+
+    display:
+        block;
+
+}
+
+
+.tlabel .dt2 {
+
+    color:
+        var(--mu);
+
+    display:
+        block;
+
+    margin-top:
+        2px;
+
+}
+
+
+.tnode.up .tlabel {
+
+    bottom:
+        calc(
+            50% + 15px
+        );
+
+}
+
+
+.tnode.down .tlabel {
+
+    top:
+        calc(
+            50% + 15px
+        );
+
+}
+
+
+.tnode.final .tlabel .dt2 {
+
+    color:
+        var(--rd);
+
+    font-weight:
+        600;
+
+}
+
+
+/* ==========================================
+   LEGEND
+   ========================================== */
+
+.lg {
+
+    display:
+        flex;
+
+    gap:
+        14px;
+
+    flex-wrap:
+        wrap;
+
+    font-size:
+        11.5px;
+
+    color:
+        var(--mu);
+
+    margin-top:
+        6px;
+
+}
+
+
+/* ==========================================
+   SEARCH / FILTER
+   ========================================== */
+
+.ctl {
+
+    display:
+        flex;
+
+    gap:
+        8px;
+
+}
+
+
+input,
+select {
+
+    background:
+        var(--bg);
+
+    color:
+        var(--tx);
+
+    border:
+        1px solid
+        var(--line);
+
+    border-radius:
+        8px;
+
+    padding:
+        7px 9px;
+
+    font-size:
+        12px;
+
+    outline:
+        none;
+
+}
+
+
+input:focus,
+select:focus {
+
+    border-color:
+        var(--ac);
+
+}
+
+
+/* ==========================================
+   RECORD LIST
+   ========================================== */
+
+.rows {
+
+    border-top:
+        1px solid
+        var(--line);
+
+}
+
+
+.row {
+
+    display:
+        flex;
+
+    gap:
+        10px;
+
+    align-items:
+        flex-start;
+
+    padding:
+        11px 2px;
+
+    border-bottom:
+        1px solid
+        var(--line);
+
+}
+
+
+.dot {
+
+    width:
+        8px;
+
+    height:
+        8px;
+
+    border-radius:
+        50%;
+
+    flex:
+        none;
+
+    margin-top:
+        5px;
+
+}
+
+
+.rm {
+
+    min-width:
+        0;
+
+    flex:
+        1;
+
+}
+
+
+.co {
+
+    font-size:
+        14px;
+
+    font-weight:
+        650;
+
+}
+
+
+.rl {
+
+    font-size:
+        12px;
+
+    color:
+        var(--mu);
+
+    margin-top:
+        2px;
+
+}
+
+
+.no {
+
+    font-size:
+        11px;
+
+    color:
+        var(--mu);
+
+    margin-top:
+        4px;
+
+    font-style:
+        italic;
+
+}
+
+
+.mt {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        flex-end;
+
+    gap:
+        3px;
+
+    color:
+        var(--mu);
+
+    font-size:
+        11px;
+
+    white-space:
+        nowrap;
+
+}
+
+
+.stx {
+
+    font-weight:
+        700;
+
+}
+
+
+.stx.sel {
+
+    color:
+        var(--gr);
+
+}
+
+
+.stx.rej,
+.stx.notc {
+
+    color:
+        var(--rd);
+
+}
+
+
+.stx.att,
+.stx.ent {
+
+    color:
+        var(--ac);
+
+}
+
+
+.stx.int {
+
+    color:
+        #ffb454;
+
+}
+
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+.record-footer {
+
+    text-align:
+        center;
+
+    margin-top:
+        6px;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 700px) {
+
+    .page {
+
+        padding:
+            28px 16px 50px;
+
+    }
+
+
+    .stats {
+
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+
+    }
+
+
+    .ctl {
+
+        width:
+            100%;
+
+    }
+
+
+    input {
+
+        flex:
+            1;
+
+        min-width:
+            0;
+
+    }
+
+
+    select {
+
+        width:
+            auto;
+
+    }
+
+}
+
+
+@media (max-width: 460px) {
+
+    .stats {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .st {
+
+        min-height:
+            88px;
+
+        padding:
+            13px;
+
+    }
+
+
+    .st b {
+
+        font-size:
+            24px;
+
+    }
+
+
+    .row {
+
+        gap:
+            8px;
+
+    }
+
+
+    .mt {
+
+        font-size:
+            10px;
+
+    }
+
+}
